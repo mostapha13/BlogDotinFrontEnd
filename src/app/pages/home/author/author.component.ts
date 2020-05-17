@@ -22,6 +22,7 @@ export class AuthorComponent implements OnInit {
      email:new FormControl(null,[
        Validators.required,
        Validators.email
+       
      ]),
      userName:new FormControl(null,[
        Validators.required
