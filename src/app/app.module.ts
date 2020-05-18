@@ -14,6 +14,10 @@ import { PostComponent } from './pages/home/post/post.component';
 import { DashboardComponent } from './pages/home/dashboard/dashboard.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { AuthorListComponent } from './pages/home/author/author-list/author-list.component';
+import { SubjectListComponent } from './pages/home/subject/subject-list/subject-list.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +31,18 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     SubjectComponent,
     PostComponent,
     DashboardComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AuthorListComponent,
+    SubjectListComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    [SweetAlert2Module.forRoot()]
   ],
   providers: [],
   bootstrap: [AppComponent]

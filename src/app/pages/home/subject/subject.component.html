@@ -1,1 +1,58 @@
-<p>subject works!</p>
+<div class="col-md-9 col-9" style="margin: 0px auto;">
+
+    <div class="card" style="height: 499.75px;">
+        <div class="card-header">
+
+            <div class="col-12 fonticon-container">
+                <div class="fonticon-wrap">
+                    <i class="feather icon-plus-circle text-success"></i>
+                </div>
+                <label class="fonticon-classname mt-1">افزودن گروه جدید </label>
+            </div>
+
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+
+                <form class="form form-vertical" [formGroup]="subjectForm" (ngSubmit)="submitSubject()">
+                    <div class="form-body">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="subject-name-icon">نام گروه</label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="title" type="text" id="subject-name-icon" class="form-control" name="subject-icon" placeholder="نام گروه">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-grid"></i>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-danger mt-1" *ngIf="subjectForm.controls.title.errors?.required && subjectForm.controls.title.touched">
+                                        * لطفا گروه خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="subjectForm.controls.title.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                <button type="submit" [disabled]="subjectForm.invalid" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">ثبت</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<swal #registersubjectSwal title="" text="" icon="">
+</swal>

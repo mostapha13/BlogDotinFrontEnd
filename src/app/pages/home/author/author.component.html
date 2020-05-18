@@ -2,7 +2,14 @@
 
     <div class="card" style="height: 499.75px;">
         <div class="card-header">
-            <h4 class="card-title">افزودن نویسنده جدید </h4>
+
+            <div class="col-12 fonticon-container">
+                <div class="fonticon-wrap">
+                    <i class="feather icon-plus-circle text-success"></i>
+                </div>
+                <label class="fonticon-classname mt-1">افزودن نویسنده جدید </label>
+            </div>
+
         </div>
         <div class="card-content">
             <div class="card-body">
@@ -20,9 +27,15 @@
                                             <i class="feather icon-user"></i>
                                         </div>
                                     </div>
+
+                                    <p class="text-danger mt-1" *ngIf="authorForm.controls.firstName.errors?.required && authorForm.controls.firstName.touched">
+                                        * لطفا نام خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="authorForm.controls.firstName.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
                                 </div>
                             </div>
-
 
                             <div class="col-12">
                                 <div class="form-group">
@@ -33,10 +46,16 @@
                                             <i class="feather icon-user"></i>
                                         </div>
                                     </div>
+
+                                    <p class="text-danger mt-1" *ngIf="authorForm.controls.lastName.errors?.required && authorForm.controls.lastName.touched">
+                                        * لطفا نام خانوادگی خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="authorForm.controls.lastName.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+
                                 </div>
                             </div>
-
-
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="email-id-icon">ایمیل</label>
@@ -46,10 +65,18 @@
                                             <i class="feather icon-mail"></i>
                                         </div>
                                     </div>
+
+                                    <p class="text-danger mt-1" *ngIf="authorForm.controls.email.errors?.required && authorForm.controls.email.touched">
+                                        * لطفا ایمیل خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="authorForm.controls.email.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 500 کاراکتر می باشد
+                                    </p>
+                                    <p class="text-danger mt-1" *ngIf="authorForm.controls.email.errors?.email">
+                                        * فرمت وارد شده اشتباه می باشد
+                                    </p>
                                 </div>
                             </div>
-
-
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-icon">نام کاربری</label>
@@ -59,14 +86,20 @@
                                             <i class="feather icon-user"></i>
                                         </div>
                                     </div>
+
+
+                                    <p class="text-danger mt-1" *ngIf="authorForm.controls.userName.errors?.required && authorForm.controls.userName.touched">
+                                        * لطفا نام کاربری خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="authorForm.controls.userName.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
                                 </div>
                             </div>
 
 
-
-
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">ثبت</button>
+                                <button type="submit" [disabled]="authorForm.invalid" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">ثبت</button>
 
 
                             </div>
@@ -77,3 +110,7 @@
         </div>
     </div>
 </div>
+
+
+<swal #registerAuthSwal title="" text="" icon="">
+</swal>
