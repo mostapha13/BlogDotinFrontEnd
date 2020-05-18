@@ -1,0 +1,79 @@
+<div class="col-md-9 col-9" style="margin: 0px auto;">
+
+    <div class="card" style="height: 499.75px;">
+        <div class="card-header">
+            <h4 class="card-title">افزودن نویسنده جدید </h4>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+
+                <form class="form form-vertical" [formGroup]="authorForm" (ngSubmit)="submitAuthor()">
+                    <div class="form-body">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="first-name-icon">نام</label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="firstName" type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="نام">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="last-name-icon">نام خانوادگی</label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="lastName" type="text" id="last-name-icon" class="form-control" name="fname-icon" placeholder="نام خانوادگی">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="email-id-icon">ایمیل</label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="email" type="email" id="email-id-icon" class="form-control" name="email-id-icon" placeholder="ایمیل">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-mail"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="first-name-icon">نام کاربری</label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="userName" type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="نام کاربری">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">ثبت</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
