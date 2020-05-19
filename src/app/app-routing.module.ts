@@ -8,16 +8,23 @@ import { CommentComponent } from './pages/home/comment/comment.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { AuthorListComponent } from './pages/home/author/author-list/author-list.component';
 import { SubjectListComponent } from './pages/home/subject/subject-list/subject-list.component';
+import { PostListComponent } from './pages/home/Post/post-list/post-list.component';
+import { CommentListComponent } from './pages/home/comment/comment-list/comment-list.component';
+import { EditAuthorComponent } from './pages/home/author/edit-author/edit-author.component';
+ 
 
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'author', component: AuthorComponent },
+  {path:'editAuthor/:id',component:EditAuthorComponent},
   { path: 'subject', component: SubjectComponent },
   { path: 'post', component: PostComponent },
   { path: 'comment', component: CommentComponent },
   { path: 'authorList', component: AuthorListComponent },
   { path: 'subjectList', component: SubjectListComponent },
+  {path:'postList',component:PostListComponent},
+  {path:'commentList',component:CommentListComponent},
 
   { path: '**', component: NotFoundComponent }
 

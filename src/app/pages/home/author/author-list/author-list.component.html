@@ -32,12 +32,28 @@
                 <td>{{auth.email}}</td>
                 <td>{{auth.createDate|date :' HH:mm:ss - yyyy/MM/dd'}}</td>
                 <td>
-                    <div class="col-12 fonticon-container">
-                        <div class="fonticon-wrap">
-                            <i (click)="removeAuthor(auth.id)" title="حذف" class="feather icon-x-circle text-danger" style="font-size: 25px;cursor: pointer;"></i>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="col-4 fonticon-container">
+                                <div class="fonticon-wrap">
+                                    <i (click)="removeAuthor(auth.id)" title="حذف" class="feather icon-x-circle text-danger" style="cursor: pointer;"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-2">
+
+                            <div class="col-md-4 col-sm-6 col-12 fonticon-container">
+                                <div class="fonticon-wrap">
+                                    <i class="feather icon-edit text-warning" (click)="editAuthor(auth.id)" style="cursor: pointer;" title="ویرایش {{auth.firstName+' '+ auth.lastName}}"></i>
+                                </div>
+
+                            </div>
                         </div>
 
                     </div>
+
+
                 </td>
             </tr>
         </table>

@@ -1,1 +1,124 @@
-<p>post works!</p>
+<div class="col-md-9 col-9" style="margin: 0px auto;">
+
+    <div class="card" style="height:auto">
+        <div class="card-header">
+
+            <div class="col-12 fonticon-container">
+                <div class="fonticon-wrap">
+                    <i class="feather icon-plus-circle text-success"></i>
+                </div>
+                <label class="fonticon-classname mt-1">افزودن پست جدید </label>
+            </div>
+
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+
+                <form class="form form-vertical" [formGroup]="postForm" (ngSubmit)="submitPost()">
+                    <div class="form-body">
+                        <div class="row">
+
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="first-name-icon">عنوان </label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="title" type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="عنوان ">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="text-danger mt-1" *ngIf="postForm.controls.title.errors?.required && postForm.controls.title.touched">
+                                        * لطفا عنوان خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="postForm.controls.title.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="first-name-icon">نام نویسنده</label>
+                                    <select class="form-control" formControlName="authorId">
+                                        <option [value]="0">انتخاب کنید</option>
+                                        <option *ngFor="let auth of authorList" value="{{auth.id}}">{{auth.fullName}}</option>
+                                    </select>
+
+
+                                    <p class="text-danger mt-1" *ngIf="postForm.controls.authorId.errors?.required && postForm.controls.authorId.touched">
+                                        * لطفا نام نویسنده خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="postForm.controls.authorId.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="last-name-icon"> گروه </label>
+                                    <select class="form-control" formControlName="subjectId">
+                                        <option [value]="0">انتخاب کنید</option>
+                                        <option *ngFor="let subject of subjectList" value="{{subject.id}}">{{subject.title}}</option>
+                                       
+                                    </select>
+
+                                    <p class="text-danger mt-1" *ngIf="postForm.controls.subjectId.errors?.required && postForm.controls.subjectId.touched">
+                                        * لطفا گروه خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="postForm.controls.subjectId.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="first-name-icon">متن </label>
+                                    <div class="position-relative has-icon-left">
+                                        <textarea formControlName="text" type="text" cols="5" id="first-name-icon" class="form-control" name="fname-icon" placeholder="متن ">
+                                            </textarea>
+
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="text-danger mt-1" *ngIf="postForm.controls.text.errors?.required && postForm.controls.text.touched">
+                                        * لطفا متن خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="postForm.controls.text.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">ثبت</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<swal #registerPostSwal title="" text="" icon="">
+</swal>

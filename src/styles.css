@@ -1,4 +1,6 @@
-input.ng-invalid.ng-touched {
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
     border: 1px solid tomato;
     box-shadow: 1px 1px 10px rgb(248, 61, 176);
 }

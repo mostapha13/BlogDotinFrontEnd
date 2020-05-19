@@ -18,6 +18,10 @@ import {HttpClientModule} from '@angular/common/http'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AuthorListComponent } from './pages/home/author/author-list/author-list.component';
 import { SubjectListComponent } from './pages/home/subject/subject-list/subject-list.component';
+import { PostListComponent } from './pages/home/Post/post-list/post-list.component';
+import { CommentListComponent } from './pages/home/comment/comment-list/comment-list.component';
+import { EditAuthorComponent } from './pages/home/author/edit-author/edit-author.component';
+ 
 
 @NgModule({
   declarations: [
@@ -34,6 +38,9 @@ import { SubjectListComponent } from './pages/home/subject/subject-list/subject-
     NotFoundComponent,
     AuthorListComponent,
     SubjectListComponent,
+    PostListComponent,
+    CommentListComponent,
+    EditAuthorComponent,
     
   ],
   imports: [
@@ -42,7 +49,8 @@ import { SubjectListComponent } from './pages/home/subject/subject-list/subject-
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    [SweetAlert2Module.forRoot()]
+    [SweetAlert2Module.forRoot()],
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

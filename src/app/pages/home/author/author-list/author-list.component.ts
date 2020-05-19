@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthorService } from 'src/app/service/author.service';
 import { IAuthor } from 'src/app/DTOs/Author/IAuthor';
 import { SwalComponent } from '@sweetalert2/ngx-sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-author-list',
@@ -14,7 +15,8 @@ export class AuthorListComponent implements OnInit {
 
   authorList: IAuthor;
   constructor(
-    private _service: AuthorService
+    private _service: AuthorService,
+    private _route:Router
   ) { }
 
   ngOnInit(): void {
@@ -63,6 +65,13 @@ if(confirm("آیا مطمئن هستید؟")){
 
   });
 }
+  }
+
+
+
+
+  editAuthor(i){
+    this._route.navigate(['/editAuthor',i])
   }
 
   

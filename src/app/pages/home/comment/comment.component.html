@@ -1,1 +1,80 @@
-<p>comment works!</p>
+<div class="col-md-9 col-9" style="margin: 0px auto;">
+
+    <div class="card" style="height:auto">
+        <div class="card-header">
+
+            <div class="col-12 fonticon-container">
+                <div class="fonticon-wrap">
+                    <i class="feather icon-plus-circle text-success"></i>
+                </div>
+                <label class="fonticon-classname mt-1">افزودن کامنت جدید </label>
+            </div>
+
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+
+                <form class="form form-vertical" [formGroup]="commentForm" (ngSubmit)="submitComment()">
+                    <div class="form-body">
+                        <div class="row">
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="last-name-icon"> پست </label>
+                                    <select class="form-control" formControlName="postId">
+                                        <option [value]="0">انتخاب کنید</option>
+                                        <option *ngFor="let post of postList" value="{{post.id}}">{{post.post}}</option>
+                                       
+                                    </select>
+
+                                    <p class="text-danger mt-1" *ngIf="commentForm.controls.postId.errors?.required && commentForm.controls.postId.touched">
+                                        * لطفا پست خود را وارد نمایید
+                                    </p>
+
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="first-name-icon">متن </label>
+                                    <div class="position-relative has-icon-left">
+                                        <textarea formControlName="text" type="text" cols="5" id="first-name-icon" class="form-control" name="fname-icon" placeholder="متن ">
+                                            </textarea>
+
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="text-danger mt-1" *ngIf="commentForm.controls.text.errors?.required && commentForm.controls.text.touched">
+                                        * لطفا متن خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="commentForm.controls.text.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 1500 کاراکتر می باشد
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <button type="submit" [disabled]="commentForm.invalid" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">ثبت</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<swal #registerCommentSwal title="" text="" icon="">
+</swal>

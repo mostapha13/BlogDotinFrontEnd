@@ -1,0 +1,132 @@
+<div class="col-md-9 col-9" style="margin: 0px auto;">
+
+    <div class="card" style="height: 499.75px;">
+        <div class="card-header">
+
+            <div class="col-12 fonticon-container">
+                <div class="fonticon-wrap">
+                    <i class="feather icon-plus-circle text-success"></i>
+                </div>
+                <label class="fonticon-classname mt-1">ویرایش اطلاعات </label>
+            </div>
+
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+
+                <form class="form form-vertical" [formGroup]="editAuthorForm" (ngSubmit)="submitEditAuthor()">
+                    <input type="hidden" formControlName="id" />
+                    <input type="hidden" formControlName="updateDate" />
+                    <input type="hidden" formControlName="createDate" />
+                    <input type="hidden" formControlName="isDelete" />
+                    <div class="form-body">
+                        <div class="row">
+
+
+
+
+                            <p *ngIf="editAuthorForm.controls.firstName.errors?.required">
+
+                            </p>
+
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="last-name-icon">نام </label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="firstName" type="text" id="last-name-icon" class="form-control" name="fname-icon">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-danger mt-1" *ngIf="editAuthorForm.controls.firstName.errors?.required && editAuthorForm.controls.firstName.touched">
+                                        * لطفا نام خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="editAuthorForm.controls.firstName.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="last-name-icon">نام خانوادگی</label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="lastName" type="text" id="last-name-icon" class="form-control" name="fname-icon">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-danger mt-1" *ngIf="editAuthorForm.controls.lastName.errors?.required && editAuthorForm.controls.lastName.touched">
+                                        * لطفا نام خانوادگی خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="editAuthorForm.controls.lastName.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="email-id-icon">ایمیل</label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="email" type="email" id="email-id-icon" class="form-control" name="email-id-icon" placeholder="ایمیل">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-mail"></i>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-danger mt-1" *ngIf="editAuthorForm.controls.email.errors?.required && editAuthorForm.controls.email.touched">
+                                        * لطفا ایمیل خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="editAuthorForm.controls.email.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 500 کاراکتر می باشد
+                                    </p>
+                                    <p class="text-danger mt-1" *ngIf="editAuthorForm.controls.email.errors?.email">
+                                        * فرمت وارد شده اشتباه می باشد
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="user-name-icon">نام کاربری</label>
+                                    <div class="position-relative has-icon-left">
+                                        <input formControlName="userName" readonly type="text" id="user-name-icon" class="form-control" name="fname-icon">
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="text-danger mt-1" *ngIf="editAuthorForm.controls.userName.errors?.required && editAuthorForm.controls.userName.touched">
+                                        * لطفا نام کاربری خود را وارد نمایید
+                                    </p>
+                                    <p class="text-danger" *ngIf="editAuthorForm.controls.userName.errors?.maxlength">
+                                        تعداد کاراکتر مجاز 250 کاراکتر می باشد
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <button type="submit" [disabled]="editAuthorForm.invalid" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">ویرایش</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<swal #registerEditauthSwal title="" text="" icon="">
+</swal>
