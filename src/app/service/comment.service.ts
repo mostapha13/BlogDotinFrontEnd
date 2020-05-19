@@ -29,4 +29,10 @@ return this.http.get<CommentList>(domainName+'/api/Comment/GetAllCommentList');
   }
 
 
+  removeComment(i:number):Observable<any>{
+ 
+    return this.http.get<Observable<any>>(domainName+"/api/Comment/RemoveComment/"+i);
+  }
+  
+
 }

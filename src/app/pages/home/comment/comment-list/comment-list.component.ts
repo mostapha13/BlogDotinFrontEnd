@@ -21,9 +21,48 @@ this._service.getAllCommentList().subscribe(res=>{
 });
   }
 
+  
 
-  removeComment(i){
-alert(i);
-  }
+  removeComment(i) {
+
+    if(confirm("آیا مطمئن هستید؟")){
+      this._service.removeComment(i).subscribe(res => {
+     
+          
+        if(res.status==='success')
+        {
+          this.removeCommentSwal.icon='success';
+          this.removeCommentSwal.title='تبریک';
+          this.removeCommentSwal.text='عملیات مورد نظر با موفقیت انجام گردید';
+          this.removeCommentSwal.fire();
+         
+          this._service.getAllCommentList().subscribe(res=>{
+            this.comments=res;
+          });
+        }
+    
+        if(res.status==='error'){
+    
+          this.removeCommentSwal.icon='error';
+          this.removeCommentSwal.title='خطا';
+          this.removeCommentSwal.text=res.data.info;
+          this.removeCommentSwal.fire();
+        }
+    
+      });
+    }
+      }
+    
+    
+
+
+
+
+
+
+
+
+
+
 
 }
