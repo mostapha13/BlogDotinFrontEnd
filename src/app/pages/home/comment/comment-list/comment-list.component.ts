@@ -32,7 +32,7 @@ this._service.getAllCommentList().subscribe(res=>{
         if(res.status==='success')
         {
           this.removeCommentSwal.icon='success';
-          this.removeCommentSwal.title='تبریک';
+          this.removeCommentSwal.title='موفق';
           this.removeCommentSwal.text='عملیات مورد نظر با موفقیت انجام گردید';
           this.removeCommentSwal.fire();
          

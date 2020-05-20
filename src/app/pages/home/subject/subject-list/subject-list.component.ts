@@ -34,7 +34,7 @@ this._service.getAllSubject().subscribe(res=>{
     this._service.removeSubject(id).subscribe(res=>{
       if(res.status==='success'){
         this.removesubjectSwal.icon='success';
-        this.removesubjectSwal.title='تبریک';
+        this.removesubjectSwal.title='موفق';
         this.removesubjectSwal.text='عملیات مورد نظر با موفقیت انجام گردید';
         this.removesubjectSwal.fire();
 

@@ -29,7 +29,7 @@ this._service.getAllPost().subscribe(res=>{
 this._service.removePost(i).subscribe(res=>{
   if(res.status==='success'){
 this.removepostSwal.icon='success';
-this.removepostSwal.title='تبریک';
+this.removepostSwal.title='موفق';
 this.removepostSwal.text='حذف با موفقیت انجام شد';
 this.removepostSwal.fire();
 

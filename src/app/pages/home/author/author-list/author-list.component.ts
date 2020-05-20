@@ -42,7 +42,7 @@ if(confirm("آیا مطمئن هستید؟")){
     if(res.status==='success')
     {
       this.removeAuthSwal.icon='success';
-      this.removeAuthSwal.title='تبریک';
+      this.removeAuthSwal.title='موفق';
       this.removeAuthSwal.text='عملیات مورد نظر با موفقیت انجام گردید';
       this.removeAuthSwal.fire();
      

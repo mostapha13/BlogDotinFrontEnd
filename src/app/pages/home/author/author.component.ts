@@ -55,7 +55,7 @@ export class AuthorComponent implements OnInit {
       if (res.status === 'success') {
         this.authorForm.reset();
         this.registerAuthSwal.icon = 'success';
-        this.registerAuthSwal.title = 'تبریک';
+        this.registerAuthSwal.title = 'موفق';
         this.registerAuthSwal.text = 'ثبت نام موفق';
         this.registerAuthSwal.fire();
       }

@@ -38,7 +38,7 @@ this._service.addSubject(sub).subscribe(res=>{
 if(res.status==='success'){
   this.subjectForm.reset();
         this.registersubjectSwal.icon = 'success';
-        this.registersubjectSwal.title = 'تبریک';
+        this.registersubjectSwal.title = 'موفق';
         this.registersubjectSwal.text = 'ثبت گروه با موفقیت انجام شد ';
         this.registersubjectSwal.fire();
 }

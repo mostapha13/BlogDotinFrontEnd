@@ -11,11 +11,13 @@ import { SubjectListComponent } from './pages/home/subject/subject-list/subject-
 import { PostListComponent } from './pages/home/Post/post-list/post-list.component';
 import { CommentListComponent } from './pages/home/comment/comment-list/comment-list.component';
 import { EditAuthorComponent } from './pages/home/author/edit-author/edit-author.component';
+import { ShowBlogComponent } from './pages/User/show-blog/show-blog.component';
  
 
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', component: ShowBlogComponent },
+  { path: 'admin', component: DashboardComponent },
   { path: 'author', component: AuthorComponent },
   {path:'editAuthor/:id',component:EditAuthorComponent},
   { path: 'subject', component: SubjectComponent },
