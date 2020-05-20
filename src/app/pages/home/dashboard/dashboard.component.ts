@@ -27,6 +27,8 @@ export class DashboardComponent implements OnInit {
 
 
     this._service.getAllPost().subscribe(res=>{
+      console.log(res);
+      
       this.allPost=res
     });
 
@@ -38,6 +40,8 @@ this._service.getAllSubject().subscribe(res=>{
 });
    
 this._service.getAllCommentList().subscribe(res=>{
+
+  
   this.allComment=res
 });
     

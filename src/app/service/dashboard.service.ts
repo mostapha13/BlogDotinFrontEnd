@@ -34,4 +34,6 @@ getAllCommentList():Observable<CommentList>{
   return this.http.get<CommentList>(domainName+'/api/Comment/GetAllCommentList');
     }
 
+    
+
 }
